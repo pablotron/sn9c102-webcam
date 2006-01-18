@@ -1,0 +1,36 @@
+sn9c102-webcam 0.1.0 README
+===========================
+
+Overview
+--------
+Simple image writing tool for sn9c102-based webcams.  The source for
+this is based on Christophe Lucas's SDL sn9c102 viewer, which is
+available (along with a handful of other sn9c102 applications) at the
+following URL:
+
+  http://bertrik.sikken.nl/webcam/
+
+Usage
+-----
+  Usage: ./sn9c102-webcam <video_dev> <image_path> [delay] [width] [height] [scalefact]
+
+  Parameters:
+    video_dev:  Path to video4linux device (e.g. "/dev/video0", required).
+     img_path:  Path of output image (e.g. "cam.jpg", required).
+        delay:  Delay between captures, in milliseconds. (defaults to 20).
+        width:  Width of image, in pixels. (defaults to 320).
+       height:  Height of image, in pixels. (defaults to 240).
+    scalefact:  Downscale factor. (defaults to 1).
+
+Examples
+--------
+  # save to "cam.jpg" from V4L device "/dev/video0".
+  ./sn9c102-webcam /dev/video0 cam.jpg
+
+  # save to "cam-XXX.jpg" from "/dev/video0" with a 1 second delay.
+  ./sn9c102-webcam /dev/video0 cam-%03d.jpg 1000
+
+About the Author
+----------------
+Paul Duncan <pabs@pablotron.org>
+http://pablotron.org/
